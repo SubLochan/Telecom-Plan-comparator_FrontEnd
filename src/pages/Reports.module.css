@@ -1,0 +1,33 @@
+.page { padding: 0 0 60px; min-height: 100vh; }
+.pageHeader {
+  background: linear-gradient(135deg, #0D1B3E 0%, #1A2744 60%, #0F1117 100%);
+  padding: 32px 24px; margin-bottom: 24px;
+  border-bottom: 1px solid var(--border); position: relative; overflow: hidden;
+}
+.pageHeader::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 100% at 80% 50%, rgba(59,130,246,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.pageHeaderInner { max-width: 1280px; margin: 0 auto; position: relative; }
+.title { font-size: 1.6rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.sub { color: var(--text-2); font-size: 0.875rem; }
+
+.inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+.statRow { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 12px; margin-bottom: 24px; }
+.statCard { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; text-align: center; }
+.statVal { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+.statLabel { font-size: 0.72rem; color: var(--text-3); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px,1fr)); gap: 16px; }
+.chartCard { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.chartTitle { font-size: 0.875rem; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+
+.tooltip { background: var(--bg-3); border: 1px solid var(--border-2); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 0.82rem; color: var(--text); box-shadow: var(--shadow); }
+.tooltipLabel { color: var(--text-3); font-size: 0.72rem; margin-bottom: 4px; font-weight: 700; }
+
+.loadingGrid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 20px; }
+.skeletonChart { height: 300px; border-radius: var(--radius); }
+
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } .loadingGrid { grid-template-columns: 1fr; } }

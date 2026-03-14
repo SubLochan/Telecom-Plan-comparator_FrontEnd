@@ -1,0 +1,59 @@
+.panel {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  position: sticky; top: 76px;
+}
+
+.panelHead {
+  background: var(--bg-3); padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.panelTitle {
+  display: flex; align-items: center; gap: 7px;
+  font-family: var(--font-display); font-size: 0.82rem; font-weight: 700; color: var(--text);
+}
+.panelTitle svg { color: var(--primary); }
+
+.resetBtn {
+  display: flex; align-items: center; gap: 4px;
+  background: none; border: 1px solid var(--border-2);
+  color: var(--text-3); font-size: 0.72rem; cursor: pointer;
+  padding: 4px 8px; border-radius: 4px; transition: all var(--transition); font-family: var(--font-body);
+}
+.resetBtn:hover { color: var(--danger); border-color: var(--danger); }
+
+.body { padding: 16px 18px; display: flex; flex-direction: column; gap: 14px; }
+.group { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 0.72rem; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.select, .input {
+  background: var(--bg-3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); color: var(--text);
+  padding: 8px 10px; font-size: 0.85rem; font-family: var(--font-body); width: 100%; outline: none;
+  transition: border-color var(--transition);
+}
+.select:focus, .input:focus { border-color: var(--primary); }
+.select option { background: var(--bg-3); }
+
+.row { display: flex; align-items: center; gap: 6px; }
+.dash { color: var(--text-3); font-size: 0.75rem; flex-shrink: 0; }
+
+.toggleGroup { display: flex; gap: 6px; }
+.toggleBtn {
+  flex: 1; padding: 7px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border); background: var(--bg-3);
+  color: var(--text-2); font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; transition: all var(--transition); font-family: var(--font-body);
+}
+.toggleBtn:hover { border-color: var(--border-2); color: var(--text); }
+.toggleActive { background: var(--primary-dim); border-color: var(--primary); color: var(--primary-light); }
+
+.applyBtn {
+  padding: 11px; border-radius: var(--radius-sm);
+  background: var(--primary); color: #fff; border: none;
+  font-size: 0.875rem; font-weight: 700; cursor: pointer;
+  font-family: var(--font-display); transition: background var(--transition); box-shadow: var(--shadow-blue);
+}
+.applyBtn:hover { background: var(--primary-dark); }
+.applyBtn:disabled { opacity: 0.5; cursor: not-allowed; }

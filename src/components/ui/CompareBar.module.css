@@ -1,0 +1,41 @@
+.bar {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  z-index: 200; animation: fadeUp 0.3s ease both;
+  width: calc(100% - 48px); max-width: 800px;
+}
+.inner {
+  background: var(--bg-2); border: 1px solid var(--border-2);
+  border-radius: var(--radius-lg); padding: 12px 18px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(59,130,246,0.1);
+  backdrop-filter: blur(20px);
+}
+.left { display: flex; align-items: center; gap: 10px; flex: 1; overflow: hidden; }
+.icon { color: var(--primary); flex-shrink: 0; }
+.count { font-size: 0.82rem; font-weight: 600; color: var(--text-2); white-space: nowrap; flex-shrink: 0; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; overflow: hidden; }
+.chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 8px 3px 10px;
+  background: var(--primary-dim); border: 1px solid rgba(59,130,246,0.3);
+  border-radius: 99px; font-size: 0.72rem; color: var(--primary-light); font-weight: 600;
+}
+.chipRemove { background: none; border: none; color: var(--primary-light); cursor: pointer; display: flex; align-items: center; opacity: 0.7; padding: 1px; }
+.chipRemove:hover { opacity: 1; }
+.right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.clearBtn {
+  display: flex; align-items: center; gap: 5px;
+  background: none; border: 1px solid var(--border-2); color: var(--text-2);
+  padding: 7px 12px; border-radius: var(--radius-sm); font-size: 0.8rem;
+  cursor: pointer; transition: all var(--transition); font-family: var(--font-body);
+}
+.clearBtn:hover { border-color: var(--danger); color: var(--danger); }
+.compareBtn {
+  background: var(--primary); color: #fff; border: none;
+  padding: 8px 18px; border-radius: var(--radius-sm);
+  font-size: 0.875rem; font-weight: 700; cursor: pointer;
+  transition: background var(--transition); font-family: var(--font-display); white-space: nowrap;
+}
+.compareBtn:hover { background: var(--primary-dark); }
+.compareBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+@media (max-width: 600px) { .chips, .count { display: none; } }

@@ -1,0 +1,46 @@
+.page { padding: 28px 24px 80px; min-height: 100vh; max-width: 1280px; margin: 0 auto; }
+.topBar { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.back { display: inline-flex; align-items: center; gap: 5px; color: var(--text-3); font-size: 0.82rem; text-decoration: none; transition: color var(--transition); }
+.back:hover { color: var(--primary); }
+.title { font-size: 1.4rem; font-weight: 800; color: var(--text); flex: 1; }
+.clearBtn { padding: 7px 14px; background: none; border: 1px solid var(--border-2); border-radius: var(--radius-sm); color: var(--text-3); font-size: 0.8rem; cursor: pointer; transition: all var(--transition); font-family: var(--font-body); font-weight: 600; }
+.clearBtn:hover { border-color: var(--danger); color: var(--danger); }
+
+/* Summary */
+.summaryRow { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.summaryBadge { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); flex: 1; min-width: 160px; }
+.summaryIcon { font-size: 1.3rem; flex-shrink: 0; }
+.rankCircle { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; color: #fff; font-size: 0.72rem; font-weight: 800; flex-shrink: 0; }
+.summaryLabel { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.summaryPlan { font-size: 0.8rem; font-weight: 600; color: var(--text-2); margin-top: 2px; }
+
+/* Table */
+.tableWrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+.table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.thLabel { background: var(--bg-2); padding: 12px 16px; text-align: left; font-size: 0.7rem; color: var(--text-3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+.thPlan { background: var(--primary-dark); padding: 14px 20px; text-align: center; border-bottom: 1px solid rgba(59,130,246,0.3); border-left: 1px solid rgba(59,130,246,0.2); min-width: 180px; }
+.planProvider { font-size: 0.68rem; color: rgba(255,255,255,0.6); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.planName { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: #fff; margin: 2px 0; }
+.planPrice { font-size: 1.05rem; font-weight: 800; color: #fff; font-family: var(--font-display); }
+.planPrice span { font-size: 0.68rem; opacity: 0.6; font-weight: 400; }
+.tdLabel { padding: 11px 16px; color: var(--text-2); font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+.td { padding: 11px 20px; text-align: center; color: var(--text-2); border-left: 1px solid var(--border); position: relative; }
+.rowEven td { background: rgba(255,255,255,0.015); }
+.rowFirst td { background: rgba(245,158,11,0.04) !important; }
+.tdBest { color: var(--success) !important; font-weight: 700; background: var(--success-dim) !important; }
+.trophy { color: var(--accent); margin-right: 4px; vertical-align: middle; }
+.tdBoolYes { color: var(--success); }
+.tdBoolNo  { color: var(--text-3); }
+.tdBoolYes svg, .tdBoolNo svg { display: inline-block; vertical-align: middle; }
+.tdName { padding: 11px 16px; border-left: 1px solid var(--border); color: var(--text); font-weight: 700; }
+.rankBadge { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 4px; color: #fff; font-size: 0.78rem; font-weight: 800; font-family: var(--font-display); }
+.rankNum { font-size: 0.82rem; font-weight: 700; color: var(--text-3); }
+
+/* Empty */
+.empty { text-align: center; padding: 100px 20px; }
+.emptyIcon { font-size: 4rem; margin-bottom: 16px; }
+.empty h2 { font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.empty p { color: var(--text-2); margin-bottom: 24px; }
+.emptyBtn { display: inline-block; padding: 11px 28px; background: var(--primary); color: #fff; border-radius: var(--radius-sm); font-weight: 700; text-decoration: none; font-family: var(--font-display); transition: background var(--transition); box-shadow: var(--shadow-blue); }
+.emptyBtn:hover { background: var(--primary-dark); }
+.skeleton { height: 500px; border-radius: var(--radius); }

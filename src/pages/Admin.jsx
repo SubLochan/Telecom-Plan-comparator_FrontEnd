@@ -276,28 +276,6 @@ export default function Admin() {
     } catch (e) { toast.error(e.message) }
   }
 
-  // ── User enable / disable toggle ─────────────────────────────────
-  const toggleEnabled = async (u) => {
-    if (isRootAdmin(u)) {
-      toast.error('Root admin account cannot be disabled.')
-      return
-    }
-    if (u.username === user?.username) {
-      toast.error('You cannot disable your own account.')
-      return
-    }
-    try {
-      if (u.enabled) {
-        await authService.disableUser(u.id)
-        toast.success(`${u.username} disabled`)
-      } else {
-        await authService.enableUser(u.id)
-        toast.success(`${u.username} enabled`)
-      }
-      loadData()
-    } catch (e) { toast.error(e.message) }
-  }
-
   // ── User role toggle ──────────────────────────────────────────────
   const isRootAdmin = (u) => u.username === ROOT_ADMIN_USERNAME
 
@@ -470,14 +448,9 @@ export default function Admin() {
                         <td>{u.email}</td>
                         <td>{u.roles?.map(r => r.replace('ROLE_', '')).join(', ')}</td>
                         <td>
-                          <button
-                            className={`${styles.statusBadge} ${u.enabled ? styles.active : styles.inactive}`}
-                            style={{ cursor: (isRootAdmin(u) || u.username === user?.username) ? 'default' : 'pointer', border: 'none', background: 'none' }}
-                            onClick={() => toggleEnabled(u)}
-                            title={(isRootAdmin(u) || u.username === user?.username) ? 'Cannot change status' : (u.enabled ? 'Click to disable' : 'Click to enable')}
-                          >
+                          <span className={`${styles.statusBadge} ${u.enabled ? styles.active : styles.inactive}`}>
                             {u.enabled ? 'Active' : 'Disabled'}
-                          </button>
+                          </span>
                         </td>
                         <td>
                           {locked ? (

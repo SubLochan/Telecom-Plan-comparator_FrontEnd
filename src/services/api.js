@@ -1,8 +1,12 @@
 import axios from 'axios'
 import { getActiveToken } from './session'
 
+// In development: VITE_API_BASE_URL = /api  (proxied by Vite to localhost:8080)
+// In production:  VITE_API_BASE_URL = https://your-backend.onrender.com/api
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: BASE_URL,
   headers: { 'Content-Type': 'application/json' },
 })
 

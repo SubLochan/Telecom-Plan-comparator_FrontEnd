@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext'
 import { useCompare } from '../../context/CompareContext'
 import {
   LayoutGrid, GitCompare, BarChart3, LogOut, User,
-  Menu, X, ShieldCheck, Signal, ChevronDown, UserCheck,
+  Menu, X, ShieldCheck, Signal, ChevronDown, UserCheck, Sparkles,
 } from 'lucide-react'
 import styles from './Navbar.module.css'
 
@@ -43,9 +43,10 @@ export default function Navbar() {
   }
 
   const links = [
-    { to: '/',        label: 'Plans',    icon: <LayoutGrid size={15} /> },
-    { to: '/compare', label: 'Compare',  icon: <GitCompare size={15} /> },
-    { to: '/reports', label: 'Reports',  icon: <BarChart3 size={15} /> },
+    { to: '/',          label: 'Plans',       icon: <LayoutGrid size={15} /> },
+    { to: '/best-plan', label: 'Best For You', icon: <Sparkles size={15} /> },
+    { to: '/compare',   label: 'Compare',     icon: <GitCompare size={15} /> },
+    { to: '/reports',   label: 'Reports',     icon: <BarChart3 size={15} /> },
   ]
 
   return (

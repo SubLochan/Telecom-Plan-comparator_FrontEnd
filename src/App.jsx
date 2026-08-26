@@ -3,15 +3,16 @@ import { Toaster } from 'react-hot-toast'
 import { AuthProvider, useAuth } from './context/AuthContext'
 import { CompareProvider } from './context/CompareContext'
 
-import Navbar      from './components/layout/Navbar'
-import Dashboard   from './pages/Dashboard'
-import PlanDetail  from './pages/PlanDetail'
-import ComparePage from './pages/ComparePage'
-import Reports     from './pages/Reports'
-import Login       from './pages/Login'
-import Register    from './pages/Register'
-import Profile     from './pages/Profile'
-import Admin       from './pages/Admin'
+import Navbar         from './components/layout/Navbar'
+import Dashboard      from './pages/Dashboard'
+import PlanDetail     from './pages/PlanDetail'
+import ComparePage    from './pages/ComparePage'
+import Reports        from './pages/Reports'
+import JobRecommender from './pages/JobRecommender'
+import Login          from './pages/Login'
+import Register       from './pages/Register'
+import Profile        from './pages/Profile'
+import Admin          from './pages/Admin'
 
 function ProtectedRoute({ children, adminOnly = false }) {
   const { user, loading, isAdmin } = useAuth()
@@ -40,6 +41,7 @@ function AppRoutes() {
         <Route path="/"            element={<Dashboard />} />
         <Route path="/plans/:id"   element={<PlanDetail />} />
         <Route path="/compare"     element={<ComparePage />} />
+        <Route path="/best-plan"   element={<JobRecommender />} />
         <Route path="/reports"     element={<Reports />} />
         <Route path="/login"       element={<Login />} />
         <Route path="/register"    element={<Register />} />

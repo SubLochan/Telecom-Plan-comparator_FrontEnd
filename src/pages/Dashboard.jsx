@@ -5,7 +5,7 @@ import FilterPanel from '../components/ui/FilterPanel'
 import CompareBar from '../components/ui/CompareBar'
 import { useAuth } from '../context/AuthContext'
 import { Link } from 'react-router-dom'
-import { Search, ChevronLeft, ChevronRight, LayoutGrid, Bookmark, BarChart3 } from 'lucide-react'
+import { Search, ChevronLeft, ChevronRight, LayoutGrid, Bookmark, BarChart3, Sparkles } from 'lucide-react'
 import styles from './Dashboard.module.css'
 
 export default function Dashboard() {
@@ -61,7 +61,7 @@ export default function Dashboard() {
                 Find the best plan from top providers — filter by budget, data, and features
               </div>
             </div>
-            <Link to="/compare" className={styles.startBtn}>Start Comparison →</Link>
+            <Link to="/best-plan" className={styles.startBtn}><Sparkles size={16} /> Find My Best Plan</Link>
           </div>
         </div>
       </div>
@@ -69,6 +69,7 @@ export default function Dashboard() {
       {/* Quick actions */}
       <div className={styles.quickActions}>
         <Link to="/" className={styles.quickCard}><LayoutGrid size={18} />My Plans</Link>
+        <Link to="/best-plan" className={styles.quickCard}><Sparkles size={18} />Best Plan for My Job</Link>
         <Link to="/compare" className={styles.quickCard}><Bookmark size={18} />Saved Plans</Link>
         <Link to="/reports" className={styles.quickCard}><BarChart3 size={18} />Usage Reports</Link>
       </div>
